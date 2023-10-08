@@ -1,0 +1,254 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: ori-reg;
+    src: url(https://static.oriflame.com/fonts/v2/fonts/sans-regular.woff2);
+}
+
+@font-face {
+    font-family: ori-bold;
+    src: url(https://static.oriflame.com/fonts/v2/fonts/sans-bold.woff2);
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+}
+
+.whats-new{
+    width: 70%;
+    height: 480px;
+    position: relative;
+    top: calc(50% - 480px / 2);
+    left: calc(50% - 70% / 2);
+    display: grid;
+    grid-template: 1fr 5fr / 4fr 5fr;
+    gap: 25px 18px; 
+    overflow: hidden;
+}
+
+.whats-new .title{
+    grid-column: 1/-1;
+    text-align: center;
+    position: relative;
+}
+
+.title span{
+    font-size: 40px;
+    font-family: ori-bold;
+    color: #333333;
+}
+
+.title button{
+    text-align: right;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    padding: 10px 26px;
+    background-color: white;
+    border: 1px solid #333333;
+    font-family: ori-bold;
+    font-size: 16px;
+    color: #333333;
+    text-transform: uppercase;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.title button:hover{
+    background-color: rgb(243, 240, 240);
+}
+
+.banner{
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner button{
+    width: 140px;
+    height: 45px;
+    position: absolute;
+    bottom: 30px;
+    right: calc(50% - 140px / 2);
+    border: unset;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-family: ori-bold;
+    font-size: 16px;
+    border-radius: 26px;
+    cursor: pointer;
+    transition: 400ms;
+    
+}
+
+.banner button>a{
+    color: rgb(255, 255, 255);
+    transition: 400ms;
+}
+
+.banner button:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.banner button:hover a{
+    color: rgb(51, 51, 51);
+}
+
+.banner img{
+    width: 100%;
+    height: 100%;
+}
+
+.products{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    column-gap: 6px;
+}
+
+.products .card{
+    flex: 4;
+    height: 100%;
+}
+
+.card figure{
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
+}
+
+.card figure button{
+    width: 50px;
+    height: 50px;
+    fill: rgb(196, 190, 190);
+    position: absolute;
+    bottom: 35px;
+    right: 12px;
+    background-color: white;
+    border-radius: 50%;
+    border: unset;
+    box-shadow: rgba(0, 0, 66, 0.08) 0px 3px 4px 0px, rgba(0, 0, 66, 0.08) 0px 1px 8px 0px;
+    cursor: pointer;
+    transition: 400ms;
+}
+
+.card figure button svg{
+    height: 50%;
+}
+
+.card figure button:hover{
+    fill: rgb(85, 85, 85);
+}
+
+.card figure img{
+    width: 100%;
+    height: 100%;
+    transition: 400ms;
+}
+
+.card:hover img{
+    transform: scale(1.1);
+}
+
+.card .rating svg{
+    fill: #80cdd0;
+    height: 16px;
+}
+
+.card .rating span{
+    font-family: ori-bold;
+    font-size: 14px;
+    color: #8d8d8d;
+    vertical-align: bottom;
+    margin-left: 6px;
+}
+
+.card .description .name{
+    font-family: ori-reg;
+    font-size: 12px;
+    color: #8d8d8d;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.card .description .comment{
+    font-family: ori-reg;
+    font-size: 15px;
+    color: #464646;
+}
+
+.card .description .color::before{
+    content:"";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #f9d2b8;
+    margin-top: 12px;
+}
+
+.card .description .color::after{
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #e3bb9d;
+    margin-top: 12px;
+}
+
+.card .description .price::before{
+    content: attr(data-dsicountprice);
+    display: inline-block;
+    font-family: ori-bold;
+    color: #685bc7;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+.card .description .price::after{
+    content: attr(data-realprice);
+    display: inline-block;
+    font-family: ori-reg;
+    color: #666666;
+    font-size: 14px;
+    margin-top: 6px;
+    text-decoration: line-through;
+    margin-left: 12px;
+}
+
+.card:nth-of-type(2) figure::after{
+    content: "NEW";
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    background-color: #63666a;
+    text-align: center;
+    line-height: 30px;
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    font-family: ori-bold;
+    color: white;
+    border-radius: 6px;
+    font-size: 12px;
+
+}
+
+.card:nth-of-type(3) figure>svg{
+    height: 36px;
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    background-color: #685bc7;
+    fill: white;
+    border-radius: 50%;
+    padding: 6px;
+    box-sizing: content-box;
+}
